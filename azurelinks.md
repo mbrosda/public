@@ -1,7 +1,8 @@
 ---
 title: Azure Links
-sidebar: default_sidebar
 ---
+
+sidebar: default_sidebar
 
 # Azure Links
 

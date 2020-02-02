@@ -1,7 +1,8 @@
 ---
 title: Readme
-sidebar: default_sidebar
 ---
+
+sidebar: default_sidebar
 
 ## Welcome to GitHub Pages
 
