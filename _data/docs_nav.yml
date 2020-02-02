@@ -8,12 +8,12 @@ entries:
     folderitems:
 
     - title: ReadMe
-      url: /README.md
+      url: /README
       output: web, pdf
       type: homepage
 
     - title: AzureLinks
-      url: /azurelinks.html
+      url: /
       output: web, pdf
 
   - title: Folder2
@@ -21,5 +21,5 @@ entries:
     folderitems:
 
     - title: xyz
-      url: /azurelinks.html
+      url: /azurelinks
       output: web, pdf
