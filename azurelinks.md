@@ -19,3 +19,5 @@ sidebar: default_sidebar
 
 
 [Jekyll](https://idratherbewriting.com/documentation-theme-jekyll/mydoc_alerts.html)
+
+[Planning Poker](https://www.pointingpoker.com)
