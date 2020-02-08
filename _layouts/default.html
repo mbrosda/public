@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
+    <style>
+      #toc {
+        float:right;
+      } 
+    </style>
+
 {% seo %}
   </head>
 
@@ -29,10 +35,15 @@
       </div>
     </header>
 
-    <div class="container">
-      <section id="main_content">
-        {{ content }}
-      </section>
+    <div id="page">
+      <div id="toc">
+          {% include toc.html html=content %}
+      </div>
+      <div id="main" class="container">
+        <section id="main_content">
+          {{ content }}
+        </section>
+      </div>
     </div>
 
     {% if site.google_analytics %}
