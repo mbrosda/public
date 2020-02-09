@@ -10,6 +10,9 @@
       #toc {
         float:right;
       } 
+      #menu {
+        float:left;
+      } 
     </style>
 
 {% seo %}
@@ -36,7 +39,10 @@
     </header>
 
     <div id="page">
-      <div id="toc">
+      <div id="menu">
+        {% include nav.html nav=page.nav %}
+      </div>
+      <div id="toc">          
           {% include toc.html html=content %}
       </div>
       <div id="main" class="container">
