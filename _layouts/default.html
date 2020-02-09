@@ -7,12 +7,19 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
     <style>
+      a.active {
+        color: #444444;
+        text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+      }
       #toc {
         float:right;
       } 
       #menu {
         float:left;
-      } 
+      }
+      #active {
+        color: #888;
+      }
     </style>
 
 {% seo %}
@@ -39,6 +46,40 @@
     </header>
 
     <div id="page">
+      <div>
+        <p>---------------</p>
+        {% for node in site.pages %}
+          <p><a {% if node.url == page.url %}class="active"{% endif %} href="{{ node.url }}">{{ node.title }}</a></p>
+        {% endfor %}
+        <p>---------------</p>
+
+        {% assign url_parts = page.url | split: '/' %}
+        {% assign url_parts_size = url_parts | size %}
+        {% assign rm = url_parts | last %}
+        {% assign base_url = page.url | replace: rm %}
+
+        {% assign sorted = site.pages | sort: 'url' %}
+        
+        <ul>        
+        {% for node in sorted %}
+          {% if node.url contains base_url %}
+            {% assign node_url_parts = node.url | split: '/' %}
+            {% assign node_url_parts_size = node_url_parts | size %}
+            {% assign filename = node_url_parts | last %}
+
+            {% if  filename != 'index.html' and node.title %}
+
+              {% capture count %}{{ node_url_parts_size }}{% endcapture %}
+              <li>{% for x in (3..count) %}&nbsp;{% endfor%}<a href='{{node.url}}'>{{node.title}}</a></li>
+
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        </ul>
+          </ul>
+
+          <p>---------------</p>
+        </div>
       <div id="menu">
         {% include nav.html nav=page.nav %}
       </div>
