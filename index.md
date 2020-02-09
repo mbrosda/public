@@ -8,6 +8,8 @@ sidebar: default_sidebar
 
 [Liquid Reference](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers)
 
+[TOC with Data](http://planetjekyll.github.io/snippets/nav-with-data)
+
 [TOC-Example](https://github.com/allejo/jekyll-toc#usage)
 
 You can use the [editor on GitHub](https://github.com/mbrosda/public/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
