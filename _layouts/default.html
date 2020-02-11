@@ -78,7 +78,7 @@
             {% if  filename != 'index.html' and node.title %}
 
               {% capture count %}{{ node_url_parts_size }}{% endcapture %}
-              <li>{% for x in (3..count) %}&nbsp;{% endfor%}<a href='{{node.url}}'>{{node.title}}</a></li>
+              <li>{% for x in (3..count) %}&nbsp;{% endfor%}<a href='{{site.url}}/{{node.url}}'>{{node.title}}</a></li>
 
             {% endif %}
           {% endif %}
