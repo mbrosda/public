@@ -46,7 +46,7 @@
     </header>
 
     <div id="page">
-      <div>
+      <div id="menu">
         <p>---------------</p>
         {% for node in site.pages %}
           <p><a {% if node.url == page.url %}class="active"{% endif %} href="{{ node.url }}">{{ node.title }}</a></p>
@@ -86,11 +86,9 @@
           {% endif %}
         {% endfor %}
         </ul>
-          </ul>
 
-          <p>---------------</p>
-        </div>
-      <div id="menu">
+        <p>---------------</p>
+
         {% include nav.html nav=page.nav %}
       </div>
       <div id="toc">          
