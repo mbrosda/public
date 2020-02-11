@@ -56,11 +56,13 @@
         {% assign url_parts = page.url | split: '/' %}
         {% assign url_parts_size = url_parts | size %}
         {% assign rm = url_parts | last %}
-        <p>remove from Base URL: {{rm}}</p>
         {% assign base_url = page.url | replace: rm %}
 
         {% assign sorted = site.pages | sort: 'url' %}
-        
+
+        <p>remove from Base URL: {{rm}}</p>
+        <p>Page URL: {{page.url}}</p>
+
         <ul>        
         {% for node in sorted %}
           {% if node.url contains base_url %}
