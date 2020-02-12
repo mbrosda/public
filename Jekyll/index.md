@@ -18,6 +18,10 @@ title: Jekyll
 | :------------------------ | :----------: |
 | Markdown Cheatsheet       | [Link](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) |
 
+# Liquid Reference
+
+[Liquid](https://help.shopify.com/en/themes/liquid)
+
 # Jekyll Themes
 
 [Jekyll](https://idratherbewriting.com/documentation-theme-jekyll/mydoc_alerts.html)
