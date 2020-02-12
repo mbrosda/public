@@ -12,3 +12,13 @@ title: Jekyll
 
 [TOC-Example](https://github.com/allejo/jekyll-toc#usage)
 
+# Markdown
+
+| Title                     | Location     |
+| :------------------------ | :----------: |
+| Markdown Cheatsheet       | [Link](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) |
+
+# Jekyll Themes
+
+[Jekyll](https://idratherbewriting.com/documentation-theme-jekyll/mydoc_alerts.html)
+
