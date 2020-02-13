@@ -41,3 +41,9 @@ samcogan.arm-snippets               | [Link](https://marketplace.visualstudio.co
 searKing.preview-vscode             | [Link](https://marketplace.visualstudio.com/items?itemName=searKing.preview-vscode)             | [Link](vscode:extension/searKing.preview-vscode)             |
 grzegorzjudas.vscode-gitbuild       | [Link](https://marketplace.visualstudio.com/items?itemName=grzegorzjudas.vscode-gitbuild)       | [Link](vscode:extension/grzegorzjudas.vscode-gitbuild)       |
 eamodio.gitlens                     | [Link](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)                     | [Link](vscode:extension/eamodio.gitlens)                     |
+
+## Snippets in VSCode
+
+| Language        | Link   |
+| :-------------- | :----: |
+| Powershell      | [Link](https://gist.github.com/rkeithhill/60eaccf1676cf08dfb6f) |
