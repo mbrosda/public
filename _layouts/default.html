@@ -36,7 +36,7 @@
         <a id="a-title" href="{{ '/' | relative_url }}">
           <h1>{{ site.title | default: site.github.repository_name }}</h1>
         </a>
-        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+        <h2>{{ site.description | default: site.github.project_tagline }} [ last built on {{ site.time }} ]</h2>
         <h2>{{ page.last-modified-date | date: '%B %d, %Y' }}</h2>
 
         <section id="downloads">
@@ -51,58 +51,66 @@
 
     <div id="page">
       <div id="menu">
-        <p>---------------</p>
-        {% for node in site.pages %}
-          <p><a {% if node.url == page.url %}class="active"{% endif %} href="{{ node.url }}">{{ node.title }}</a></p>
-        {% endfor %}
-        <p>---------------</p>
+        {% comment %}
+          <!--
+            This is Menu #1 (try)
+          -->
+          {% for node in site.pages %}
+            <p><a {% if node.url == page.url %}class="active"{% endif %} href="{{ node.url }}">{{ node.title }}</a></p>
+          {% endfor %}
+        {% endcomment %}
 
+        <!-- This is Menu #2 (try) -->
         {% assign url_parts = page.url | split: '/' %}
         {% assign url_parts_size = url_parts | size %}
         {% assign rm = url_parts | last %}
         {% assign base_url = page.url | replace: rm %}
 
-        {% assign sorted = site.pages | sort: 'url' %}
+        {% assign sorted = site.pages | sort: 'url' %} <!-- sort alphabetically (case sensitive!) -->
 
-        <p>site.url {{site.url}}</p>
-        <p>{{ '/assets/css/copybtn.css?v='  | append: site.github.build_revision | relative_url }}</p>
         {% comment %}
-          <p>remove from Base URL: {{rm}}</p>
-          <p>Page URL: {{page.url}}</p>
-          <p>Site URL: {{site.url}}</p>
-          <p>site.github.repository_url: {{site.github.repository_url}}</p>
-          <p>page.path: {{page.path}}</p>
-          <p>site {{site}}</p>
-          <p>page {{page}}</p>
         {% endcomment %}
+        <!-- 
+          <p>remove from Base URL:       {{rm}}</p>
+          <p>site.github.repository_url: {{site.github.repository_url}}</p>
+
+          <p>site.url:                   {{site.url}}</p>
+          <p>site                        {{site}}</p>
+          <p>Page.url:                   {{page.url}}</p>
+          <p>page.path:                  {{page.path}}</p>
+          <p>page                        {{page}}</p>
+        -->
 
         <ul>        
-        {% for node in sorted %}
+        {% for node in sorted %} <!-- loop over all nodes (sorted) -->
+          <!-- initialize variables for {{ node.url }} -->
+          {% assign basesize            = base_url | size %}
+          {% assign truncated_node_url  = node.url | truncate: basesize, '' %}
+          {% assign node_url_parts      = node.url | split: '/' %}
 
-          {% assign basesize = base_url | size %}
-          {% assign truncated_node_url = node.url | truncate: basesize, '' %}
-
-          {% assign node_url_parts = node.url | split: '/' %}
           {% assign node_url_parts_size = node_url_parts | size %}
-          {% assign filename = node_url_parts | last %}
+          {% assign filename            = node_url_parts | last %}
+          {% assign dirtest             = "/" | append: filename | append: "/" %}
 
-          {% assign dirtest = "/" | append: filename | append: "/" %}
+          <!-- decide, if menuitem shall be shown -->
           {% assign show = true %}
           {% if filename contains '.' %}    {% assign show = false %}{% endif %}
           {% if filename contains '.html' %}{% assign show = true %}{% endif %}
           {% if filename == null %}         {% assign show = true %}{% endif %}
 
-          {% comment %}
-            <p>Node URL: {{node.url}}</p>
-            <p>Title: {{node.title}}</p>
-            <p>Base URL: {{base_url}}</p>
-            <p>  Length: {{base_url | size}}</p>
+          <!--
+            <p>node.url:            {{node.url}}</p>
+            <p>node.title:          {{node.title}}</p>
+            <p>base_url:            {{base_url}}</p>
+            <p>node_url_parts_size: {{node_url_parts_size}}<p>
+            <p>length of base_url:  {{base_url | size}}</p>
             <p>XX: {{base_url | replace_first: node.url }}</p>
             <p>YY: {{ truncated_node_url }}</p>
-            <p>filename: x{{ filename }}x</p>
-            <p>dirtest:  x{{ dirtest }}x</p>
-            <p>show:  x{{ show }}x</p>
-          {% endcomment %}
+            <p>filename:            #{{ filename }}#</p>
+            <p>dirtest:             #{{ dirtest  }}#</p>
+
+            <p>show:                #{{ show     }}#</p>
+          -->
 
           {% if show == true %}
               {% capture count %}{{ node_url_parts_size }}{% endcapture %}
@@ -113,11 +121,14 @@
           {% endif %}
         {% endfor %}
         </ul>
-
-        <p>---------------</p>
-
-        {% include nav.html nav=page.nav %}
+        {% comment %}
+          <!--
+            This is Menu #3 (try)
+          -->
+          {% include nav.html nav=page.nav %}
+        {% endcomment %}
       </div>
+
       <div id="toc">          
           {% include toc.html html=content %}
       </div>
