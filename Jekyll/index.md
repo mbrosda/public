@@ -26,3 +26,7 @@ title: Jekyll
 
 [Jekyll](https://idratherbewriting.com/documentation-theme-jekyll/mydoc_alerts.html)
 
+
+# Clipboard button
+
+https://github.com/marcoaugustoandrade/jekyll-clipboardjs
