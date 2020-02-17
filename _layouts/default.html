@@ -8,8 +8,6 @@
 
     <!-- Code for Copy-Button vvvvvvvvvvvvvvvvvvvvv -->
       <link rel="stylesheet" href="{{ '/assets/css/copybtn.css?v='  | append: site.github.build_revision | relative_url }}">
-      <script                 src="{{ '/assets/clipboard.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
-      <script                 src="{{ '/assets/copy.js?v='          | append: site.github.build_revision | relative_url }}"></script>
     <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
 
     <style>
@@ -66,6 +64,8 @@
 
         {% assign sorted = site.pages | sort: 'url' %}
 
+        <p>site.url {{site.url}}</p>
+        <p>{{ '/assets/css/copybtn.css?v='  | append: site.github.build_revision | relative_url }}</p>
         {% comment %}
           <p>remove from Base URL: {{rm}}</p>
           <p>Page URL: {{page.url}}</p>
@@ -102,7 +102,7 @@
             <p>filename: x{{ filename }}x</p>
             <p>dirtest:  x{{ dirtest }}x</p>
             <p>show:  x{{ show }}x</p>
-            {% endcomment %}
+          {% endcomment %}
 
           {% if show == true %}
               {% capture count %}{{ node_url_parts_size }}{% endcapture %}
@@ -156,5 +156,10 @@
         </section>
       </div>
     </footer>
+
+    <!-- Code for Copy-Button vvvvvvvvvvvvvvvvvvvvv -->
+    <script                 src="{{ '/assets/clipboard.min.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script                 src="{{ '/assets/copy.js?v='          | append: site.github.build_revision | relative_url }}"></script>
+    <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
   </body>
 </html>
