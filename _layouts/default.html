@@ -51,6 +51,7 @@
 
     <div id="page">
       <div id="menu">
+        {% assign debug = 1 %}
         {% comment %}
           <!--
             This is Menu #1 (try)
@@ -71,17 +72,20 @@
 
         {% comment %}
         {% endcomment %}
-        <!-- 
-          <p>remove from Base URL:       {{rm}}</p>
-          <p>site.github.repository_url: {{site.github.repository_url}}</p>
+        {% if debug == 1 %}
+          <!-- 
+            <p>############ page variables ############</p>
+            <p>remove from Base URL:       {{rm}}</p>
+            <p>site.github.repository_url: {{site.github.repository_url}}</p>
 
-          <p>compare_page_url            {{compare_page_url}}</p>
-          <p>site.url:                   {{site.url}}</p>
-          <p>site                        {{site}}</p>
-          <p>Page.url:                   {{page.url}}</p>
-          <p>page.path:                  {{page.path}}</p>
-          <p>page                        {{page}}</p>
-        -->
+            <p>compare_page_url            {{compare_page_url}}</p>
+            <p>site.url:                   {{site.url}}</p>
+            <p>site                        {{site}}</p>
+            <p>page.url:                   {{page.url}}</p>
+            <p>page.path:                  {{page.path}}</p>
+            <p>page                        {{page}}</p>
+          -->
+        {% endif %}
 
         <ul>        
         {% for node in sorted %} <!-- loop over all nodes (sorted) -->
@@ -104,9 +108,12 @@
             {% if filename == null %}          {% assign show = true %}  {% endif %} <!-- in case of a directory, show menu item - OBSOLETE ? -->
           {% endcomment %}
 
-          <!--
+          {% if debug == 1 %}
+          <!-- 
+            <p>############ node variables ############</p>
             <p>rel_url:              {{rel_url}}</p>
             <p>node.url:             {{node.url}}</p>
+            <p>node.path:            {{node.path}}</p>
             <p>compare_node_url      {{compare_node_url}}</p>
             <p>compare_page_url      {{compare_page_url}}</p>
             <p>node_url_parts[0]     #{{node_url_parts[0]}}#</p>
@@ -119,6 +126,7 @@
             <p>filename:             #{{ filename }}#</p>
             <p>show:                 #{{ show     }}#</p>
           -->
+          {% endif %}
 
           {% if show == true %}
               {% capture count %}{{ level }}{% endcapture %}
