@@ -62,11 +62,14 @@
         {% endcomment %}
 
         <!-- This is Menu #2 (try) -->
-        {% assign url_parts = page.url       | split: '/' %}
-        {% assign url_parts_size = url_parts | size %}
-        {% assign rm = url_parts             | last %}
-        {% assign base_url = page.url        | replace: rm %}
-        {% assign compare_page_url = "µ"     | append: page.url %} <!-- current PAGE plus start-character - for later comparison -->
+        {% assign page_url_parts      = page.url        | split: '/' %}
+        {% assign page_url_parts_size = page_url_parts  | size %}
+        {% assign page_path_parts     = page.path       | split: '/' %}                        <!-- split node path in parts -->
+        {% assign page_level          = page_url_parts  | size | minus: 1 | at_last: 1 %}      <!-- count number of parts = level of current node -->
+
+        {% assign rm                  = page_url_parts  | last %}
+        {% assign base_url            = page.url        | replace: rm %}
+        {% assign compare_page_url    = "µ"             | append: page.url %}                  <!-- current PAGE plus start-character - for later comparison -->
 
         {% assign sorted = site.pages        | sort: 'url' %}      <!-- sort alphabetically (case sensitive!) -->
 
@@ -83,6 +86,7 @@
             <p>site                        {{site}}</p>
             <p>page.url:                   {{page.url}}</p>
             <p>page.path:                  {{page.path}}</p>
+            <p>page_level:                 {{page_level}}</p>
             <p>page                        {{page}}</p>
           -->
         {% endif %}
@@ -90,18 +94,18 @@
         <ul>        
         {% for node in sorted %} <!-- loop over all nodes (sorted) -->
           <!-- initialize variables for {{ node.url }} -->
-          {% assign compare_node_url = "µ"            | append: node.url %}              <!-- current NODE plus start-character - for later comparison -->
-          {% assign rel_url          = node.url       | relative_url %}
-          {% assign node_url_parts   = node.url       | split: '/' %}                    <!-- split node url in parts -->
-          {% assign level            = node_url_parts | size | minus: 1 | at_least: 1 %} <!-- count number of parts -->
-          {% assign filename         = node_url_parts | last %}                          <!-- last part is filename -->
+          {% assign compare_node_url = "µ"             | append: node.url %}                  <!-- current NODE plus start-character - for later comparison -->
+          {% assign node_url_parts   = node.url        | split: '/' %}                        <!-- split node url in parts -->
+          {% assign node_path_parts  = node.path       | split: '/' %}                        <!-- split node path in parts -->
+          {% assign node_level       = node_url_parts  | size | minus: 1 | at_least: 1 %}     <!-- count number of parts = level of current node -->
+          {% assign filename         = node_path_parts | last %}                              <!-- last part is filename -->
 
           <!-- decide, if menuitem shall be shown -->
-          {% assign show = true %}                                                                          <!-- by default show menu entry -->
-          {% if level == 1 %}                                     {% assign show = true %}  {% endif %}     <!-- show everything on 1st level -->
-          {% unless compare_page_url contains compare_node_url %} {% assign show = true %}  {% endunless %} <!-- TO BE CONTINUED ... -->
-          {% if filename contains '.' %}                          {% assign show = false %} {% endif %}     <!-- if filename contains a dor, then it is currently a css or whatever file - HIDE! -->
-          {% if filename contains '.html' %}                      {% assign show = true %}  {% endif %}     <!-- ... but if it is a .html file, then show it -->
+          {% assign show = true %}                                                                           <!-- by default show menu entry -->
+          {% if node_level == 1 %}                                {% assign show = true %}  {% endif %}      <!-- show everything on 1st level -->
+          {% unless compare_page_url contains compare_node_url %} {% assign show = true %}  {% endunless %}  <!-- TO BE CONTINUED ... -->
+          {% if filename contains '.' %}                          {% assign show = false %} {% endif %}      <!-- if filename contains a dor, then it is currently a css or whatever file - HIDE! -->
+          {% if filename contains '.md' %}                        {% assign show = true %}  {% endif %}      <!-- ... but if it is a .html file, then show it -->
 
 
           {% comment %}
@@ -122,14 +126,14 @@
             <p>node_url_parts[3]     #{{node_url_parts[3]}}#</p>
             <p>node.title:           {{node.title}}</p>
             <p>base_url:             {{base_url}}</p>
-            <p>level:                {{level}}<p>
+            <p>node_level:           {{node_level}}<p>
             <p>filename:             #{{ filename }}#</p>
             <p>show:                 #{{ show     }}#</p>
           -->
           {% endif %}
 
           {% if show == true %}
-              {% capture count %}{{ level }}{% endcapture %}
+              {% capture count %}{{ node_level }}{% endcapture %}
               <li>
                 {% for x in (2..count) %}&nbsp;&nbsp;{% endfor%}<a href='{{site.url}}{{node.url}}'>{{node.title}}</a>       <!-- add 2 spaces for each level deeper than 1 -->
               </li>
