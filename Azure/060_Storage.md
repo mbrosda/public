@@ -53,3 +53,7 @@ foreach ($disk in $vmDisks)
 
 Start-AzVM -ResourceGroupName $rgName -Name $vmName
 ````
+
+## Creating a VHD file from an online disk
+
+Follow the instructions for [Disk2vhd](https://docs.microsoft.com/de-de/sysinternals/downloads/disk2vhd) by Mark Russinovich
