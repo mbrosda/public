@@ -54,6 +54,9 @@ foreach ($disk in $vmDisks)
 Start-AzVM -ResourceGroupName $rgName -Name $vmName
 ````
 
-## Creating a VHD file from an online disk
+## Creating a VHD file from an online disk / shrink VHD disk size
 
 Follow the instructions for [Disk2vhd](https://docs.microsoft.com/de-de/sysinternals/downloads/disk2vhd) by Mark Russinovich
+
+Here are some additional information about how to shrink the size of a VM's VHD file: https://roadtoalm.com/2016/10/25/shrink-the-physical-size-of-an-azure-virtual-machine-vhd/
+
