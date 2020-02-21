@@ -35,6 +35,7 @@ ms-mssql.mssql                      | [Link](https://marketplace.visualstudio.co
 ms-vscode.azure-account             | [Link](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)             | [Link](vscode:extension/ms-vscode.azure-account)             |
 ms-vscode.azurecli                  | [Link](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)                  | [Link](vscode:extension/ms-vscode.azurecli)                  |
 ms-vscode.powershell                | [Link](https://marketplace.visualstudio.com/items?itemName=ms-vscode.powershell)                | [Link](vscode:extension/ms-vscode.powershell)                |
+ms-python.python                    | [Link](https://marketplace.visualstudio.com/items?itemName=ms-python.python)                    | [Link](vscode:extension/ms-python.python)                    |
 msazurermtools.azurerm-vscode-tools | [Link](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools) | [Link](vscode:extension/msazurermtools.azurerm-vscode-tools) |
 myh.preview-vscode                  | [Link](https://marketplace.visualstudio.com/items?itemName=myh.preview-vscode)                  | [Link](vscode:extension/myh.preview-vscode)                  |
 samcogan.arm-snippets               | [Link](https://marketplace.visualstudio.com/items?itemName=samcogan.arm-snippets)               | [Link](vscode:extension/samcogan.arm-snippets)               |
