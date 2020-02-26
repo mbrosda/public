@@ -60,3 +60,7 @@ Follow the instructions for [Disk2vhd](https://docs.microsoft.com/de-de/sysinter
 
 Here are some additional information about how to shrink the size of a VM's VHD file: https://roadtoalm.com/2016/10/25/shrink-the-physical-size-of-an-azure-virtual-machine-vhd/
 
+
+## Preview: AD Authentication for Azure fileshares
+
+https://azure.microsoft.com/de-de/blog/preview-of-active-directory-for-authentication-on-azure-file/
