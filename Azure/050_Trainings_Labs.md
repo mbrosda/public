@@ -2,6 +2,12 @@
 title: Azure Training Labs
 ---
 
+# Azure Learning resources
+
+Azure Certification, Architecture, Security and more - Azure learning resources - free of charge!
+
+* https://github.com/ddneves/awesome-azure-learning
+
 # Azure Training Labs
 
 ## General

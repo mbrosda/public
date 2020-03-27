@@ -61,6 +61,16 @@ Follow the instructions for [Disk2vhd](https://docs.microsoft.com/de-de/sysinter
 Here are some additional information about how to shrink the size of a VM's VHD file: https://roadtoalm.com/2016/10/25/shrink-the-physical-size-of-an-azure-virtual-machine-vhd/
 
 
+## Azure Shared Disks
+
+[Azure Shared Disks - Preview](https://azure.microsoft.com/de-de/blog/announcing-the-preview-of-azure-shared-disks-for-clustered-applications/)
+[Azure Shared Disks - Documentation](https://aka.ms/azureshareddiskdocs)
+[Azure Shared Disks - Ignite 2019 Video](https://myignite.techcommunity.microsoft.com/sessions/82058)
+
+## INCREMENTAL snapshots of managed Disks
+
+https://azure.microsoft.com/de-de/blog/announcing-general-availability-of-incremental-snapshots-of-managed-disks/
+
 ## Preview: AD Authentication for Azure fileshares
 
 https://azure.microsoft.com/de-de/blog/preview-of-active-directory-for-authentication-on-azure-file/
