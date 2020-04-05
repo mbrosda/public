@@ -6,11 +6,17 @@ title: Tools
 
 [Planning Poker](https://www.pointingpoker.com)
 
+# Linux
+
+To enable the Linux Subsystem on Windows 10, follow the below link:
+
+* <https://docs.microsoft.com/en-us/windows/wsl/install-win10>
+
 # VSCode
 
 ## Automatic management of VScode extensions
 
-See https://code.visualstudio.com/docs/editor/extension-gallery
+See <https://code.visualstudio.com/docs/editor/extension-gallery>
 
 Short-reference:
 
