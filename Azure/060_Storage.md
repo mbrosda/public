@@ -60,6 +60,15 @@ Follow the instructions for [Disk2vhd](https://docs.microsoft.com/de-de/sysinter
 
 Here are some additional information about how to shrink the size of a VM's VHD file: https://roadtoalm.com/2016/10/25/shrink-the-physical-size-of-an-azure-virtual-machine-vhd/
 
+## Disk encryption
+
+| Title                       | Location                                                                                |
+| :-------------------------- | :-------------------------------------------------------------------------------------: |
+| Azure Disk Encryption for virtual machines and virtual machine scale sets | [Link](https://docs.microsoft.com/en-us/azure/security/fundamentals/azure-disk-encryption-vms-vmss) |
+| Announcement of Server Side Encryption for Azure VMs| [Link](https://azure.microsoft.com/de-de/blog/announcing-serverside-encryption-with-customermanaged-keys-for-azure-managed-disks/) |
+
+
+
 ## Azure Shared Disks
 
 | Title                       | Location                                                                                |
