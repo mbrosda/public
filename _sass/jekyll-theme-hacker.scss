@@ -34,11 +34,11 @@ body {
 
 section {
   display: block;
-  margin: 0 0 20px 0;
+  margin: 0 0 0 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 20px;
+  margin: 5px 0 5px;
 }
 
 li {
@@ -55,8 +55,8 @@ footer {
   background: rgba(0, 0, 0, 0.1);
   width: 100%;
   border-top: 1px dashed $conifer; //header;
-  padding: 20px 0;
-  margin: 0 0 40px 0;
+  padding: 10px 0;
+  margin: 0 0 0 0;
 }
 
 header {
@@ -64,7 +64,7 @@ header {
   width: 100%;
   border-bottom: 1px dashed $conifer; //header;
   padding: 20px 0;
-  margin: 0 0 40px 0;
+  margin: 0 0 10px 0;
 }
 
 header h1 {
@@ -190,7 +190,7 @@ code.highlighter-rouge {
 
 table {
   width: 100%;
-  margin: 0 0 20px 0;
+  margin: 5px 0 5px 0;
 }
 
 th {
