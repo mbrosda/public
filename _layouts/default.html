@@ -12,7 +12,7 @@
 
     <style>
       a.active {
-        color: #444444;
+        color: #b5e853;;
         text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
       }
       #toc {
@@ -139,7 +139,7 @@
           {% if show == true %}
               {% capture count %}{{ node_level }}{% endcapture %}
               <li>
-                {% for x in (2..count) %}&nbsp;&nbsp;{% endfor%}<a href='{{site.url}}{{node.url}}'>{{node.title}}</a>       <!-- add 2 spaces for each level deeper than 1 -->
+                {% for x in (2..count) %}&nbsp;&nbsp;{% endfor%}<a {%if node.url == page.url %}class=active{% endif %} href='{{site.url}}{{node.url}}'>{{node.title}}</a>       <!-- add 2 spaces for each level deeper than 1 -->
               </li>
 
             {% if filename != 'index.html' %}
