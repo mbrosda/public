@@ -6,7 +6,7 @@ $body-foreground: $gallery !default;
 $header: $conifer !default;
 $blockquote-color: $silver-chalice !default;
 $blockquote-border: $dove-grey !default;
-$container-max-width: 1000px;
+$container-max-width: 60%;
 
 @mixin media-max-width($max-width) {
   @media (max-width: $max-width) {
@@ -27,7 +27,7 @@ body {
 /* General & 'Reset' Stuff */
 
 .container {
-  width: 90%;
+  width: 60%;
   max-width: $container-max-width;
   margin: 0 auto;
 }
