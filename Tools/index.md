@@ -5,6 +5,7 @@ title: Tools
 # SCRUM Tools
 
 [Planning Poker](https://www.pointingpoker.com)
+[Fun Retro](https://funretro.io/)
 
 # Linux
 
