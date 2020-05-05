@@ -55,3 +55,10 @@ eamodio.gitlens                     | [Link](https://marketplace.visualstudio.co
 | Language        | Link   |
 | :-------------- | :----: |
 | Powershell      | [Link](https://gist.github.com/rkeithhill/60eaccf1676cf08dfb6f) |
+
+## Using Notebooks instead of scripts
+
+| Title                              | Location                                                                                              |
+| :--------------------------------- | :---------------------------------------------------------------------------------------------------: |
+| Jupyter Notebooks                  | [Link](https://jupyter.org/try)                                                                       |
+| alternative: Azure Data Studio     | [Link](https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio)             |
